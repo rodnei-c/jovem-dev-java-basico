@@ -12,15 +12,11 @@ public class Exercicio5 {
 		
 		Set<Integer> conjuntoUm = new HashSet<>();
 		Set<Integer> conjuntoDois = new HashSet<>();
-		Set<Integer> conjuntoTres = new HashSet<>();
 		
 		while(conjuntoUm.size() < 10 && conjuntoDois.size() < 10) {
 			
 			conjuntoUm.add(new Random().nextInt(30));
-			conjuntoDois.add(new Random().nextInt(30));
-			
-			
-			
+			conjuntoDois.add(new Random().nextInt(30));		
 			
 		}
 		
