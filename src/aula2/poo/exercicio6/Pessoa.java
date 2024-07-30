@@ -1,6 +1,7 @@
 package aula2.poo.exercicio6;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 import javax.swing.JOptionPane;
@@ -39,6 +40,12 @@ public class Pessoa {
 			} catch(Exception e){
 				JOptionPane.showMessageDialog(null, "Formato inválido, digite no formato dd/mm/aaaa");
 			}
+	}
+	
+	public int getIdade() {
+		int idade = Period.between(dataNasc, LocalDate.now()).getYears();
+		
+		return idade;
 	}
 	
 	public String dados() {

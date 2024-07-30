@@ -18,7 +18,7 @@ public class PessoaFisica extends Pessoa{
 	}
 	
 	public String dados() {
-		return this.getNome();
+		return "Nome: " + this.getNome() + "\nData de nascimento: " + this.getDataNasc() + "\nCPF: " + this.getCpf();
 		
 	}
 	

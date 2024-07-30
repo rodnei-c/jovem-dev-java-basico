@@ -29,7 +29,7 @@ public class Exercicio6 {
 				
 			}
 			
-			mapa.put(nome, notas);
+//			mapa.put(nome, notas);
 			
 		}
 	}
