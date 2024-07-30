@@ -17,6 +17,7 @@ public class Exercicio2 {
 			Collections.sort(lista.reversed());
 			
 		}
+		
 		System.out.println(lista);
 
 	}

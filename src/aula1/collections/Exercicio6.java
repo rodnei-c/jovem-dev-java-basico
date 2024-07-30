@@ -10,35 +10,28 @@ public class Exercicio6 {
 
 	public static void main(String[] args) {
 		
-		String[] nomes = new String[5];
-		double[] notas = new double[3];
-		Map<String, Double> mapa = new HashMap<>();
-		
-		int quantA = 0;
-		int quantN = 0;
-		
-		for(int i = 0; i < nomes.length; i++) {
-			nomes[quantA] = JOptionPane.showInputDialog("Informe o nome do aluno: ");
-			double total = 0;
-			double media = 0;
-			for(int j = 0; j < notas.length; j++) {
-				notas[quantN] = Double.parseDouble(JOptionPane.showInputDialog("Informe a " + (j+1) + "º nota"));
-				total += notas[j];
+		Map<String, Double[]> mapa = new HashMap<>();
+	
+		for(int i = 0; i < 5; i++) {
+			
+			String nome = JOptionPane.showInputDialog("Informe o nome do aluno: ");
+			double[] notas = new double[3];
+			
+			for(int j = 0; j < 3; j++) {
 				
-				quantN++;
+				double nota = Double.parseDouble(JOptionPane.showInputDialog("Informe a " + j+1 + "º nota"));
+				
+				if(nota > 10 || nota < 0) {
+					System.out.println("Nota inválida");
+				} else {
+					notas[j] = nota;
+				}
+				
 			}
 			
-			media = total/notas.length;
-			mapa.put(nomes[quantA], media);
-			
-			
-			quantA++;
+			mapa.put(nome, notas);
 			
 		}
-		for(Entry<String, Double> m: mapa.entrySet()) {
-			System.out.println(m.getKey() + " - " + m.getValue());
-		}
-		
 	}
 	
 }
