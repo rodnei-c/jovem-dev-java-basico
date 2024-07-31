@@ -1,6 +1,6 @@
 package aula2.poo.exercicio7;
 
-public class Main {
+public class Principal {
 
 	public static void main(String[] args) {
 		
