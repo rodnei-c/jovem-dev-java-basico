@@ -10,7 +10,8 @@ public class Exercicio6 {
 
 	public static void main(String[] args) {
 		
-		Map<String, Double[]> mapa = new HashMap<>();
+		Map<String, double[]> mapa = new HashMap<>();
+		
 	
 		for(int i = 0; i < 5; i++) {
 			
@@ -19,7 +20,7 @@ public class Exercicio6 {
 			
 			for(int j = 0; j < 3; j++) {
 				
-				double nota = Double.parseDouble(JOptionPane.showInputDialog("Informe a " + j+1 + "º nota"));
+				double nota = Double.parseDouble(JOptionPane.showInputDialog("Informe a " + (j+1) + "º nota"));
 				
 				if(nota > 10 || nota < 0) {
 					System.out.println("Nota inválida");
@@ -29,8 +30,22 @@ public class Exercicio6 {
 				
 			}
 			
-//			mapa.put(nome, notas);
+			mapa.put(nome, notas);
 			
+		}
+		
+		for(Map.Entry<String, double[]> entry: mapa.entrySet()) {
+			double[] notas = entry.getValue();
+			double soma = 0;
+			double media = 0;
+			
+			System.out.println("\nNome: " + entry.getKey());
+			for (double n : notas) {
+				System.out.println("\nNotas: " + n);
+				soma += n;
+			}
+			media = soma / notas.length;
+			System.out.println("\nMedia: " + media);
 		}
 	}
 	
