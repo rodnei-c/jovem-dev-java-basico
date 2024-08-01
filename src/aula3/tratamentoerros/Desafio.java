@@ -13,13 +13,13 @@ public class Desafio {
 		Item i1 = new Item();
 		i1.setNome(JOptionPane.showInputDialog("Informe o nome do produto: "));
 		
-		try {
-		
+		while(true) {
+		try {	
 		i1.setPreco(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do produto ")));
-		
+		break;
 		} catch (PrecoIncorretoException e){
-			System.err.println("O valor do produto não pode ser menor ou igual a zero, digite novamente");
-			i1.setPreco(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do produto ")));
+			System.err.println("O valor do produto não pode ser menor ou igual a zero, digite novamente");		
+		}
 		}
 		v1.adicionar(i1);
 		
