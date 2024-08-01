@@ -9,10 +9,6 @@ public class Desafio {
 		List<String> lista = new ArrayList<>();
 		
 		Mostrador s1 = palavra -> palavra.toUpperCase();
-		Mostrador s2 = palavra -> palavra.toUpperCase();
-		Mostrador s3 = palavra -> palavra.toUpperCase();
-		Mostrador s4 = palavra -> palavra.toUpperCase();
-		Mostrador s5 = palavra -> palavra.toUpperCase();
 		
 		String p1 = s1.mostra("joelho");
 		String p2 = s1.mostra("dimba");
