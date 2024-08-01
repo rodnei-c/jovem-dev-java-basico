@@ -9,6 +9,7 @@ public class Exercicio3 {
 		
 		List<String> alunos = new ArrayList<String>();
 		
+//		Adiciona os nomes a lista em caixa alta
 		alunos.add("teodoro".toUpperCase());
 		alunos.add("maluco".toUpperCase());
 		alunos.add("taison".toUpperCase());
@@ -16,6 +17,7 @@ public class Exercicio3 {
 		alunos.add("caça-rato".toUpperCase());
 		alunos.add("teofilo".toUpperCase());
 		
+//		Remove da lista nomes que começam com "T" e terminam com "O"
 		alunos.removeIf((String s) -> {
 			return s.startsWith("T") && s.endsWith("O");
 		});
