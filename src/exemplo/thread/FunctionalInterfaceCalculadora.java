@@ -1,5 +1,5 @@
 package exemplo.thread;
-
+@FunctionalInterface
 public interface FunctionalInterfaceCalculadora {
-	void calcula(double valor1, double valor2);
+	double calcula(double v1, double v2);
 }

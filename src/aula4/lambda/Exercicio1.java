@@ -1,4 +1,4 @@
-package aula4.lamba;
+package aula4.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
