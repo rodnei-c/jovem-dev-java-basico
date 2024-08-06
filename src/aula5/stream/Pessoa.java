@@ -38,7 +38,7 @@ public class Pessoa {
 		Month mes = Month.MAY;
 		
 		List<Pessoa> listaMaio = lista.stream().filter(elemento -> elemento.getDataNasc().getMonth() == mes).sorted(Comparator.comparing(Pessoa::getNome)).collect(Collectors.toList());
-		
+//		List<Pessoa> listaVogal = lista.stream().filter(elemento -> elemento.getNome().startsWith("a", "e", "i", "o", "u"));
 		for(int i = 0; i < listaMaio.size(); i++) {
 			System.out.println(listaMaio.get(i).getNome());
 		}
