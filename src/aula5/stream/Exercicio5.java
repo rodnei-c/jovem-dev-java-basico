@@ -2,6 +2,7 @@ package aula5.stream;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
@@ -22,9 +23,17 @@ public class Exercicio5 {
 		nome.add("gabigol");
 		nome.add("solaire");
 		
-		List<String> nomeBerto = nome.stream().filter(elemento -> elemento.endsWith("berto")).collect(Collectors.toList());
+//		List<String> nomeBerto = nome.stream().filter(elemento -> elemento.endsWith("berto")).collect(Collectors.toList());
 		
-		System.out.println(nomeBerto.stream().findFirst().orElseThrow(() -> new ZeroBertoException()));
+		System.out.println(new Exercicio5().buscaPrimeiroNomeTerminadoEmBerto(nome));
 		
+	}
+	
+	public String buscaPrimeiroNomeTerminadoEmBerto(List<String> lista) {
+		return lista.stream()
+				.filter(Objects::nonNull)
+				.filter(n -> n.endsWith("berto"))
+				.findFirst()
+				.orElseThrow(() -> new ZeroBertoException("Nenhum berto encontrado"));
 	}
 }

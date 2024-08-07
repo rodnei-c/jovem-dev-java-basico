@@ -9,22 +9,13 @@ public class Exercicio5 {
 
 	public static void main(String[] args) {
 		
-		int numero = Integer.parseInt(JOptionPane.showInputDialog("Informe a circunferência de um círculo"));
-		double num = 2 * Math.PI;
+		int numero = Integer.parseInt(JOptionPane.showInputDialog("Informe a circunferência: "));
 		
 		BigDecimal circunferencia = BigDecimal.valueOf(numero);
-		BigDecimal divisor = BigDecimal.valueOf(num);
 		
-		BigDecimal raio = circunferencia.divide(divisor);
+		BigDecimal raio = circunferencia.divide(BigDecimal.valueOf(2 * Math.PI), 4, RoundingMode.HALF_EVEN);
 		
-		if(raio.precision() >= 5) {
-			BigDecimal arredondado = raio.round(null);
-			System.out.println(arredondado);
-		} else {
-			
-		}
-		
-		
+		System.out.println(raio);
 		
 	}
 	

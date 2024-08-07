@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Pessoa {
 	public static void main(String[] args) {
@@ -35,14 +36,41 @@ public class Pessoa {
 		lista.add(p9);
 		lista.add(p10);
 		
-		Month mes = Month.MAY;
 		
-		List<Pessoa> listaMaio = lista.stream().filter(elemento -> elemento.getDataNasc().getMonth() == mes).sorted(Comparator.comparing(Pessoa::getNome)).collect(Collectors.toList());
-//		List<Pessoa> listaVogal = lista.stream().filter(elemento -> elemento.getNome().startsWith("a", "e", "i", "o", "u"));
-		for(int i = 0; i < listaMaio.size(); i++) {
-			System.out.println(listaMaio.get(i).getNome());
-		}
 		
+//		List<Pessoa> listaMaio = lista.stream()
+//				.filter(elemento -> elemento.getDataNasc().getMonth() == mes)
+//				.sorted(Comparator.comparing(Pessoa::getNome))
+//				.collect(Collectors.toList());
+//		List<Pessoa> listaVogal = lista.stream()
+//				.filter(elemento -> elemento.getDataNasc().isLeapYear() || elemento.comecaComVogal(elemento.getNome()))
+//				.sorted(Comparator.comparing(Pessoa::getNome).reversed())
+//				.collect(Collectors.toList());
+//		String resultado = listaVogal.stream().map(Pessoa::getNome).collect(Collectors.joining("; "));
+		
+//		for(int i = 0; i < listaMaio.size(); i++) {
+//			System.out.println(listaMaio.get(i).getNome());
+//		}
+		System.out.println(new Pessoa().buscaPorMaio(lista));
+		System.out.println(new Pessoa().buscaPorVogalOuAnoBissexto(lista));
+		
+	}
+	
+	public List<String> buscaPorMaio(List<Pessoa> lista) {
+		return lista.stream()
+				.filter(elemento -> elemento.getDataNasc().getMonth() == Month.MAY)
+				.sorted(Comparator.comparing(Pessoa::getNome)).map(Pessoa::getNome)
+				.collect(Collectors.toList());
+	}
+	
+	public List<String> buscaPorVogalOuAnoBissexto(List<Pessoa> lista){
+		return lista.stream().filter(elemento -> elemento.getDataNasc().isLeapYear() || elemento.comecaComVogal(elemento.getNome()))
+				.sorted(Comparator.comparing(Pessoa::getNome).reversed()).map(Pessoa::getNome)
+				.collect(Collectors.toList());
+	}
+	
+	private static boolean comecaComVogal(String nome) {
+		return Stream.of("a","e","i","o","u").anyMatch(nome::startsWith);
 	}
 	
 	private String nome;
@@ -53,6 +81,10 @@ public class Pessoa {
 		this.nome = nome;
 		this.telefone = telefone;
 		this.dataNasc = dataNasc;
+	}
+	
+	public Pessoa() {
+		
 	}
 
 	public String getNome() {
