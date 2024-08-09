@@ -1,0 +1,45 @@
+package avaliacao.semana2.model;
+
+import java.util.Random;
+
+public abstract class Personagem {
+
+	private String nome;
+	private int maxHP;
+	private int hp;
+	
+	public Personagem(String nome, int maxHP, int hp) {
+		this.nome = nome;
+		this.maxHP = maxHP;
+		this.hp = hp;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getMaxHP() {
+		return maxHP;
+	}
+
+	public void setMaxHP(int maxHP) {
+		this.maxHP = maxHP;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	
+	public void batalhar() {
+		int dado = new Random().nextInt(1, 6);
+	}
+	
+}

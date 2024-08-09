@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PersonagemTest" project="jovem-dev-java-basico" tests="1" started="0" failures="0" errors="1" ignored="0">
+  <testsuite name="avaliacao.semana2.testes.PersonagemTest" incomplete="true" displayname="PersonagemTest" uniqueid="[engine:junit-jupiter]/[class:avaliacao.semana2.testes.PersonagemTest]">
+    <error>org.junit.platform.commons.JUnitException: @BeforeAll method 'void avaliacao.semana2.testes.PersonagemTest.setup()' must be static unless the test class is annotated with @TestInstance(Lifecycle.PER_CLASS).&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+	at java.base/java.util.Collections$UnmodifiableCollection.forEach(Collections.java:1117)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)&#13;
+&#13;
+</error>
+    <testcase name="deveDispararSeHpDoPersonagemZerar" classname="avaliacao.semana2.testes.PersonagemTest" incomplete="true" displayname="deveDispararSeHpDoPersonagemZerar()" uniqueid="[engine:junit-jupiter]/[class:avaliacao.semana2.testes.PersonagemTest]/[method:deveDispararSeHpDoPersonagemZerar()]"/>
+  </testsuite>
+</testrun>

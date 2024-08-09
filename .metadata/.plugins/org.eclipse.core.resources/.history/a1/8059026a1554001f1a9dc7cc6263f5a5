@@ -1,0 +1,16 @@
+package exemplo.enuns;
+
+public enum FormaPagamento {
+
+	CARTAO_DEBITO(2, "Cartão de débito"), CARTAO_CREDITO(1, "Cartão de crédito"), DINHEIRO(3, "Dinheiro"), PIX(17, "Pix");
+	
+	private int codigo;
+	private String descricao;
+	
+	private FormaPagamento(int codigo, String descricao) {
+		this.codigo = codigo;
+		this.descricao = descricao;
+		
+	}
+	
+}

@@ -1,0 +1,46 @@
+package avaliacao.semana2;
+
+import avaliacao.semana2.exceptions.PersonagemDerrotadoException;
+import avaliacao.semana2.model.Personagem;
+import avaliacao.semana2.model.herois.Barbaro;
+import avaliacao.semana2.model.herois.Mago;
+import avaliacao.semana2.model.herois.Paladino;
+import avaliacao.semana2.model.inimigos.Arok;
+import avaliacao.semana2.model.inimigos.Morcego;
+import avaliacao.semana2.model.inimigos.Urso;
+import avaliacao.semana2.model.inimigos.Vampiro;
+import avaliacao.semana2.model.inimigos.Zumbi;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Personagem mago = new Mago("Mago", 30, 30, 18, 23);
+		Personagem barbaro = new Barbaro("Bárbaro", 100, 100, 20, 18);
+		Personagem paladino = new Paladino("Paladino", 50, 50, 20, 19);
+		
+		Personagem morcego = new Morcego("Morcego", 10, 10, 5, 5);
+		Personagem zumbi = new Zumbi("Zumbi", 22, 22, 6, 6);
+		Personagem urso = new Urso("Urso", 30, 30, 8, 9);
+		Personagem vampiro = new Vampiro("Vampiro", 35, 35, 10, 10);
+		Personagem arok = new Arok("Arok, Mestre Supremo", 50, 50, 20, 20);
+		
+		try {
+		
+			mago.batalhar(morcego);
+		
+		} catch(PersonagemDerrotadoException e) {
+			System.out.println(e.getMensagem());
+		}
+		
+		try {
+			
+			mago.batalhar(zumbi);
+			
+		} catch(PersonagemDerrotadoException e) {
+			System.out.println(e.getMensagem());
+		}
+		
+	}
+	
+}

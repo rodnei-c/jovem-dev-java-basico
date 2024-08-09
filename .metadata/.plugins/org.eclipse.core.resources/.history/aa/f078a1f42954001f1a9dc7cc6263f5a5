@@ -1,0 +1,20 @@
+package aula6.outros;
+
+import java.util.function.Function;
+
+public enum Calculadora1Enum {
+
+	SOMA("Soma", resultado -> ),
+	SUBTRACAO("Subtração"),
+	DIVISAO("Divisão"),
+	MULTIPLICACAO("Multiplicação");
+	
+	private String nomeAmigavel;
+	private Function<Integer, Integer> resultado;
+	
+	
+	private Calculadora1Enum(String nomeAmigavel) {
+		this.nomeAmigavel = nomeAmigavel;
+	}
+	
+}

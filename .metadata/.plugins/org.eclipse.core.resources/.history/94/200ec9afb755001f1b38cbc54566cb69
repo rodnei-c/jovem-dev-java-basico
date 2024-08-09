@@ -1,0 +1,14 @@
+package dinamicaTelecoteco.src.dinamica.teste;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class MediaPorCargoTest {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

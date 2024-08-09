@@ -1,0 +1,34 @@
+package avaliacao.semana1;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+import javax.swing.JOptionPane;
+
+import avaliacao.semana1.classes.Cliente;
+import avaliacao.semana1.classes.ClientePremium;
+import avaliacao.semana1.classes.Produto;
+import avaliacao.semana1.interfaces.DescontoInterface;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		Cliente c1 = new Cliente(JOptionPane.showInputDialog("Nome do cliente: "),
+				LocalDate.parse(JOptionPane.showInputDialog("Data de nascimento: ", df)));
+		
+		while(true) {
+			Produto p1 = new Produto();
+			
+			p1.setNome(JOptionPane.showInputDialog("Qual produto deseja? "));
+			
+			if(p1.getNome().equalsIgnoreCase("fim")) {
+				break;
+			}
+		}
+		
+	}
+	
+}

@@ -1,0 +1,95 @@
+package matrizes;
+
+import javax.swing.JOptionPane;
+
+public class ExercicioMatriz1 {
+
+	public static void main(String[] args) {
+		
+		int quantP = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de provas feitas: "));
+		String menu = "1 - Cadastrar aluno\n" +
+					"2 - Listar Alunos\n" +
+					"7 - Sair";
+		
+		String nomes[] = new String[300];
+		String provas[] = new String[quantP];
+		double notas[][] = new double[300][quantP];
+		int op = 0;
+		int qt = 0;
+		
+
+		do {
+			op = Integer.parseInt(JOptionPane.showInputDialog(menu));
+			
+			switch(op) {
+			case 1:
+				if(qt < nomes.length) {
+				nomes[qt] = JOptionPane.showInputDialog((qt + 1) + "º aluno");
+				for (int i = 0; i < provas.length; i++) {
+					notas[qt][i] = Double.parseDouble(JOptionPane.showInputDialog("Nota de " + nomes[qt] + " para " + (i + 1) + "º prova"));
+				}
+				qt++;	
+				} else {
+					JOptionPane.showMessageDialog(null, "Não é possível cadastrar mais alunos");
+				}
+				
+				break;
+			case 2:
+				String res="";
+				for(int i=0; i<qt; i++) {
+					double soma = 0;
+					for(int j=0; j<provas.length; j++) {
+						soma += notas[i][j];
+					}
+					if(soma / quantP < 3) {
+						res += nomes[i] + " ficou com média " + soma / provas.length + " e está reprovado.\n";
+					} 
+					else if(soma / quantP < 7){
+						res += nomes[i] + " ficou com média " + soma / provas.length + " e está em recuperação.\n";
+					} else {
+						res += nomes[i] + " ficou com média " + soma / provas.length + " e está aprovado.\n";
+					}
+				}
+				JOptionPane.showMessageDialog(null, res);
+				
+				break;
+			case 3:
+				
+				String nmBusca = JOptionPane.showInputDialog("Qual aluno deseja buscar? ");
+				String achou = "Aluno não encontrado!";
+				
+				int pos = 0;
+				do {
+					if(nomes[pos].equals(nmBusca)) {
+
+						for(int i = 0; i < provas.length; i++) {
+							double soma = 0;
+
+							for(int j = 0; j < provas.length; j++) {
+								soma += notas[i][j];
+								if(soma / provas.length < 3) {
+									achou = nomes[pos] + " tem média " + soma / provas.length + " e está reprovado.";
+								}
+								else if(soma / provas.length < 7) {
+									achou = nomes[pos] + " tem média " + soma / provas.length + " e está em recuperação.";
+								} else {
+									achou = nomes[pos] + " tem média " + soma / provas.length + " e está em aprovado.";
+								}
+							}
+							
+					}}
+					System.out.println(pos);
+					pos++;
+				} while(pos != qt && achou.equals("Aluno não encontrado!"));
+				JOptionPane.showMessageDialog(null, achou);
+				
+				break;
+			}
+			
+			
+			
+		}while(op != 7);
+		
+	}
+	
+}

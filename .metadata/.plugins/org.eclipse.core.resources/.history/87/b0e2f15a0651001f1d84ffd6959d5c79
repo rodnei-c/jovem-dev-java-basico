@@ -1,0 +1,58 @@
+package avaliacao.semana1;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.format.DateTimeFormatter;
+
+import javax.swing.JOptionPane;
+
+import avaliacao.semana1.classes.Cliente;
+import avaliacao.semana1.classes.ClientePremium;
+import avaliacao.semana1.classes.ItemVenda;
+import avaliacao.semana1.classes.Produto;
+import avaliacao.semana1.classes.Venda;
+import avaliacao.semana1.interfaces.DescontoInterface;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		Cliente c1 = new Cliente(JOptionPane.showInputDialog("Nome do cliente: "),
+				LocalDate.parse(JOptionPane.showInputDialog("Data de nascimento: "), df));
+		Venda venda = new Venda();
+		
+		while(true) {
+			Produto p1 = new Produto();
+			
+			p1.setNome(JOptionPane.showInputDialog("Qual produto deseja? "));
+			
+			if(p1.getNome().equalsIgnoreCase("fim")) {
+				break;
+			}
+			p1.setPreco(Double.parseDouble(JOptionPane.showInputDialog("Informe o preço do produto: ")));
+			p1.setQuant(Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade que quer: ")));
+			
+			ItemVenda item = new ItemVenda(p1);
+			
+			venda.setCliente(c1);
+			venda.adicionar(item);			
+			
+		}
+		int valor = 0;
+		LocalDate dtAtual = LocalDate.now();
+		int idade = dtAtual.getYear() - c1.getDataNasc().getYear();
+		int diaNasc = c1.getDataNasc().getDayOfMonth();
+		Month mesNasc = c1 .getDataNasc().getMonth();
+		if(c1.getNome().equalsIgnoreCase("thiago") || idade >= 60 || diaNasc == dtAtual.getDayOfMonth() && mesNasc == dtAtual.getMonth()) {
+			valor = 30;
+		}
+		
+		DescontoInterface desconto = (venda.subtotal(), valor) -> venda.subtotal() - (venda.subtotal() * (20/100));
+		
+		System.out.println("************ CUPOM ************\n" + venda.getItens() + "\n" + venda.totalVenda());
+		
+	}
+	
+}

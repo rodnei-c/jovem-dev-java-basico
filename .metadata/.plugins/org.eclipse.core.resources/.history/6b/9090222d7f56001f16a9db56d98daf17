@@ -1,0 +1,95 @@
+package avaliacao.semana2.model;
+
+import java.util.Random;
+
+import avaliacao.semana2.exceptions.PersonagemDerrotadoException;
+
+public abstract class Personagem {
+
+	private String nome;
+	private int maxHP;
+	private int hp;
+	private int ataque;
+	private int defesa;
+	
+	public Personagem(String nome, int maxHP, int hp, int ataque, int defesa) {
+		this.nome = nome;
+		this.maxHP = maxHP;
+		this.hp = hp;
+		this.ataque = ataque;
+		this.defesa = defesa;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public int getMaxHP() {
+		return maxHP;
+	}
+
+	public int getAtaque() {
+		return ataque;
+	}
+
+	public void setAtaque(int ataque) {
+		this.ataque = ataque;
+	}
+
+	public int getDefesa() {
+		return defesa;
+	}
+
+	public void setDefesa(int defesa) {
+		this.defesa = defesa;
+	}
+
+	public void setMaxHP(int maxHP) {
+		this.maxHP = maxHP;
+	}
+
+	public int getHp() {
+		return hp;
+	}
+
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
+	
+	
+	
+	public void batalhar(Personagem p) throws PersonagemDerrotadoException {
+		do {
+			
+			System.out.println(this.atacar(p));
+			System.out.println(p.getNome() + " HP: " + this.getHp() + "/" + this.getMaxHP());
+			
+		} while(this.getHp() > 0 || p.getHp() > 0);
+		
+		
+	}
+	
+	public void atacar(Personagem p) throws PersonagemDerrotadoException {
+		
+		int dado = new Random().nextInt(1, 6);
+		
+		int atkRoll = this.getAtaque() + dado;		
+		
+		if(atkRoll > p.getDefesa()) {	
+			int atkDano = atkRoll - p.getDefesa();
+			p.setHp(p.getHp() - atkDano);
+			if(p.getHp() <= 0) {
+				throw new PersonagemDerrotadoException(p.getNome() + " foi derrotado por " + this.getNome());
+			} else if(this.getHp() <= 0) {
+				throw new PersonagemDerrotadoException(this.getNome() + " foi derrotado por " + p.getNome());
+			}
+		}
+		
+		p.batalhar(this);
+	}
+	
+}

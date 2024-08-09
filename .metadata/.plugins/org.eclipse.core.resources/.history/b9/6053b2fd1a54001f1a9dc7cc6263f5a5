@@ -1,0 +1,24 @@
+package exemplo.enuns;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		
+	new Principal();	
+		
+	}
+	
+	public Principal() {
+		System.out.println(FormaPagamento.CARTAO_CREDITO.ordinal());
+		
+		for (FormaPagamento pagamento : FormaPagamento.values()) {
+			System.out.println(pagamento.getDesconto().apply((double) 100));
+		}
+		System.out.println(FormaPagamento.valueOf("CARTAO_CREDITO").getCodigo());
+		
+		FormaPagamento f = FormaPagamento.DINHEIRO;
+		
+		
+	}
+	
+}

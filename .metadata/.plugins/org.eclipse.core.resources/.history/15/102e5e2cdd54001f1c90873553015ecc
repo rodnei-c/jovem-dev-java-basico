@@ -1,0 +1,21 @@
+package aula6.outros;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Desafio {
+
+	public static void main(String[] args) {
+		
+		List<Evento> eventos = new ArrayList<>();
+		
+		
+		while(true) {
+			
+			eventos.add(new Evento())
+			
+		}
+		
+	}
+	
+}

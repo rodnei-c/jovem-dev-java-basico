@@ -1,0 +1,41 @@
+package matrizes;
+
+import javax.swing.JOptionPane;
+
+public class ExercicioMatriz1 {
+
+	public static void main(String[] args) {
+		
+		int quantP = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de provas feitas: "));
+		String menu = "1 - Cadastrar aluno";
+		
+		String nomes[] = new String[300];
+		String provas[] = new String[quantP];
+		double notas[][] = new double[300][quantP];
+		
+		int op = 0;
+		int qt = 0;
+		
+		do {
+			op = Integer.parseInt(JOptionPane.showInputDialog(menu));
+			
+			switch(op) {
+			case 1:
+				nomes[qt] = JOptionPane.showInputDialog((qt + 1) + "º aluno");
+				for (int i = 0; i < .length; i++) {
+					notas[qt][i] = Double.parseDouble(
+							JOptionPane.showInputDialog("Tempo de " + nomes[qt] + " para " + distancias[i]));
+				}
+				qt++;
+				
+				
+				break;
+			}
+			
+			
+			
+		}while(op != 7);
+		
+	}
+	
+}

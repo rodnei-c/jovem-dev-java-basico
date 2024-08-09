@@ -1,0 +1,27 @@
+package aula6.outros;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+public class Desafio {
+
+	public static void main(String[] args) {
+		
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy hh:mm");
+		List<Evento> eventos = new ArrayList<>();
+		
+		
+		while(true) {
+			
+			eventos.add(new Evento(JOptionPane.showInputDialog("Informe qual vai ser o evento: "),
+					LocalDateTime.parse(JOptionPane.showInputDialog("Informe a data e hora do evento: "), null)))
+			
+		}
+		
+	}
+	
+}

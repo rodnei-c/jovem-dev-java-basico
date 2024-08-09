@@ -1,0 +1,18 @@
+package aula6.outros;
+
+public enum TipoDeEvento {
+
+	SOCIAL(1),
+	LAZER(2),
+	PROFISSIONAL(3),
+	OUTROS(4);
+	
+	private int numero;
+	
+	
+	private TipoDeEvento(int numero) {
+		this.numero = numero;
+	}
+	
+	
+}

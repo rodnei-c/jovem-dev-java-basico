@@ -1,0 +1,36 @@
+package dinamica.teste;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.junit.jupiter.api.Test;
+
+import dinamica.DepartamentoEnum;
+import dinamica.Funcionario;
+import dinamica.MediaPorCargo;
+
+class MediaPorCargoTest {
+
+	@org.junit.Test
+	void deveRetornarMediaPorCargo() {
+		
+		List<Funcionario> funcionarios = new ArrayList<>();
+		
+		funcionarios.add(new Funcionario("João Silva", DepartamentoEnum.ADMINISTRACAO, new BigDecimal("9000")));
+        funcionarios.add(new Funcionario("Maria Oliveira", DepartamentoEnum.RH, new BigDecimal("8000")));
+        funcionarios.add(new Funcionario("Pedro Souza", DepartamentoEnum.DESENVOLVIMENTO, new BigDecimal("7000")));
+        funcionarios.add(new Funcionario("Marcos Silva", DepartamentoEnum.DESENVOLVIMENTO, new BigDecimal("7600")));
+        
+        MediaPorCargo mediaCargo =  new MediaPorCargo();
+        
+        Map<DepartamentoEnum, BigDecimal> retorno = mediaCargo.getMediaPorCargo(funcionarios);
+        
+        assertEquals("{ADMINISTRACAO}",retorno);
+		
+	}
+}

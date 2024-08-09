@@ -1,0 +1,13 @@
+package dinamicaTelecoteco.src.dinamica;
+
+import java.math.BigDecimal;
+
+public class MediaPorCargo {
+
+	public static void main(String[] args) {
+		
+		Funcionario func = new Funcionario("Rafael Tomás Mendez", DepartamentoEnum.VENDAS, new BigDecimal("7750.95"));
+		
+	}
+	
+}

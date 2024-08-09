@@ -1,0 +1,64 @@
+package matrizes;
+
+import javax.swing.JOptionPane;
+
+public class ExercicioMatriz1 {
+
+	public static void main(String[] args) {
+		
+		int quantP = Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de provas feitas: "));
+		String menu = "1 - Cadastrar aluno\n" +
+					"2 - Listar Alunos\n" +
+					"7 - Sair";
+		
+		String nomes[] = new String[300];
+		String provas[] = new String[quantP];
+		double notas[][] = new double[300][quantP];
+		
+		int op = 0;
+		int qt = 0;
+		
+		do {
+			op = Integer.parseInt(JOptionPane.showInputDialog(menu));
+			
+			switch(op) {
+			case 1:
+				if(qt < nomes.length) {
+				nomes[qt] = JOptionPane.showInputDialog((qt + 1) + "º aluno");
+				for (int i = 0; i < provas.length; i++) {
+					notas[qt][i] = Double.parseDouble(JOptionPane.showInputDialog("Nota de " + nomes[qt] + " para " + (qt+1)));
+				}
+				qt++;	
+				} else {
+					JOptionPane.showMessageDialog(null, "Não é possível cadastrar mais alunos");
+				}
+				
+				break;
+			case 2:
+				String res="";
+				for(int i=0; i<qt; i++) {
+					double soma = 0;
+					for(int j=0; j<provas.length; j++) {
+						soma += notas[i][j];
+					}
+					if(soma / quantP < 3) {
+						res += nomes[i] + " ficou com média " + soma / provas.length + " e está reprovado.";
+					} 
+					else if(soma / quantP < 7){
+						res += nomes[i] + " ficou com média " + soma / provas.length + " e está em recuperação.";
+					} else {
+						res += nomes[i] + " ficou com média " + soma / provas.length + " e está aprovado.";
+					}
+				}
+				JOptionPane.showMessageDialog(null, res);
+				
+				break;
+			}
+			
+			
+			
+		}while(op != 7);
+		
+	}
+	
+}

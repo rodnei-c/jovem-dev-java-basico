@@ -1,0 +1,12 @@
+package aula6.outros;
+
+public enum Calculadora1Enum {
+
+	SOMA(),
+	SUBTRACAO(),
+	DIVISAO(),
+	MULTIPLICACAO();
+	
+	
+	
+}

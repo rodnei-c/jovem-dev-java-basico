@@ -1,0 +1,30 @@
+package aula6.outros;
+
+public enum DiaSemanaEnum {
+
+	SEGUNDA("Segunda-feira", false),
+	TERCA("Terça-feira", false),
+	QUARTA("Quarta-feira", false),
+	QUINTA("Quinta-feira", false),
+	SEXTA("Sexta-feira", false),
+	SABADO("Sábado", true),
+	DOMINGO("Domingo", true);
+	
+	private String nome;
+	private boolean isFimDeSemana;
+	
+	private DiaSemanaEnum(String nome, boolean isFimDeSemana) {
+		this.nome = nome;
+		this.isFimDeSemana = isFimDeSemana;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public boolean isFimDeSemana() {
+		return isFimDeSemana;
+	}
+	
+	
+}

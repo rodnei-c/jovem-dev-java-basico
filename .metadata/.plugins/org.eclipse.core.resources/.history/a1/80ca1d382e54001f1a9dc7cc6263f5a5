@@ -1,0 +1,14 @@
+package aula6.outros;
+
+import java.time.format.DateTimeFormatter;
+
+public class Exercicio4 {
+
+	public static void main(String[] args) {
+		
+		DateTimeFormatter dataF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		
+		
+	}
+	
+}

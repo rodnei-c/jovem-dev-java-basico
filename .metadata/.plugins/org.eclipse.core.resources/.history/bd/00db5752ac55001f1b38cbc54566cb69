@@ -1,0 +1,29 @@
+package dinamicaTelecoteco.src.dinamica;
+
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+public class MediaPorCargo {
+
+	public static void main(String[] args) {
+		
+		
+		new MediaPorCargo();
+		List<Funcionario> funcionarios = new ArrayList<>();
+		funcionarios.add(new Funcionario("João Silva", DepartamentoEnum.ADMINISTRACAO, new BigDecimal("9000")));
+        funcionarios.add(new Funcionario("Maria Oliveira", DepartamentoEnum.RH, new BigDecimal("8000")));
+        funcionarios.add(new Funcionario("Pedro Souza", DepartamentoEnum.DESENVOLVIMENTO, new BigDecimal("7000")));
+		
+	}
+	
+	public Map<DepartamentoEnum, BigDecimal> getMediaPorCargo(List<Funcionario> lista){
+		
+		
+		
+		return ;
+		
+	}
+	
+}

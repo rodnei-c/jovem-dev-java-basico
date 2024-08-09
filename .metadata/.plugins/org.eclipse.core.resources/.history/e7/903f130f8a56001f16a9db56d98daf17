@@ -1,0 +1,38 @@
+package avaliacao.semana2.testes;
+
+import static org.junit.Assert.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import avaliacao.semana2.exceptions.PersonagemDerrotadoException;
+import avaliacao.semana2.model.Personagem;
+import avaliacao.semana2.model.herois.Mago;
+import avaliacao.semana2.model.inimigos.Morcego;
+
+class PersonagemTest {
+
+	private Personagem mago;
+	private Personagem morcego;
+	
+	
+	@BeforeAll
+	void setup() {
+		mago = new Mago("Mago", 30, 30, 18, 23);
+		morcego = new Morcego("Morcego", 10, 10, 5, 5);
+	}
+	
+	
+	@Test
+	void deveDispararSeHpDoPersonagemZerar() {
+		
+		mago.setHp(0);
+		morcego.setHp(0);
+		
+		assertThrows(PersonagemDerrotadoException.class, () -> mago.batalhar(morcego));
+		
+	}
+
+}

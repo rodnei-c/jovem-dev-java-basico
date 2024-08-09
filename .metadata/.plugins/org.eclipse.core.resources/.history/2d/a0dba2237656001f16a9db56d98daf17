@@ -1,0 +1,14 @@
+package avaliacao.semana2;
+
+import avaliacao.semana2.model.Mago;
+import avaliacao.semana2.model.Personagem;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Personagem mago = new Mago("Mago", 30, 30, 18, 23);
+		
+	}
+	
+}

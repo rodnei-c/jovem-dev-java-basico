@@ -1,0 +1,22 @@
+package aula6.outros;
+
+import java.math.BigDecimal;
+
+import javax.swing.JOptionPane;
+
+public class Exercicio5 {
+
+	public static void main(String[] args) {
+		
+		int numero = Integer.parseInt(JOptionPane.showInputDialog("Informe a circunferência de um círculo"));
+		
+		BigDecimal circunferencia = BigDecimal.valueOf(numero);
+		BigDecimal n1 = BigDecimal.valueOf(2);
+		BigDecimal pi = BigDecimal.valueOf(Math.PI);
+		BigDecimal raio = circunferencia.divide(n1.multiply(pi));
+		
+		System.out.println(raio);
+		
+	}
+	
+}

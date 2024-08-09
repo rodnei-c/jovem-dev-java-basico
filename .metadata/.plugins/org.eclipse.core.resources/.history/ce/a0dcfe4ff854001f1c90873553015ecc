@@ -1,0 +1,29 @@
+package aula7.testes;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import aula5.stream.Pessoa;
+
+class PessoaTest {
+	
+	private List<String> lista;
+	private static Pessoa pessoa;
+	
+	@BeforeEach
+	void setup() {
+		lista = new ArrayList<>();
+		pessoa = new Pessoa();
+	}
+
+	@Test
+	void deveDispararExcecaoSeListaVazia() {
+		fail("Not yet implemented");
+	}
+
+}
