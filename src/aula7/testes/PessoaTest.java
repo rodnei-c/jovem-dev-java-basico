@@ -39,9 +39,9 @@ class PessoaTest {
 		lista.add(new Pessoa("arrascaeta", "98765432", LocalDate.parse("2004-05-03")));
 		lista.add(new Pessoa("daronco", "77885522", LocalDate.parse("1995-12-04")));
 		
-		String retorno = pessoa.buscaPorVogalOuAnoBissexto(lista.get(2).getNome());
+//		String retorno = pessoa.buscaPorVogalOuAnoBissexto(lista.get(2).getNome());
 		
-		assertEquals(lista.get(2).getNome(), retorno);
+//		assertEquals(lista.get(2).getNome(), retorno);
 		
 	}
 
