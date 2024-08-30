@@ -1,7 +1,0 @@
-package exemplo.enuns;
-
-public enum FormaPagamento {
-
-	CARTAO_DEBITO, CARTAO_CREDITO, DINHEIRO;
-	
-}

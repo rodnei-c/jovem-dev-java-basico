@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module dinamicaTelecoteco {
-	requires junit;
-}

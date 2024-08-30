@@ -1,8 +1,0 @@
-package avaliacao.semana1.interfaces;
-
-public interface DescontoPremium {
-	public static double desconto(Double valor) {
-		double desc = valor * 0.20;
-		return valor - desc;
-	}
-}

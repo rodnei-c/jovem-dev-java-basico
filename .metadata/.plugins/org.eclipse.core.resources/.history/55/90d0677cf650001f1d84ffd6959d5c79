@@ -1,7 +1,0 @@
-package avaliacao.semana1.interfaces.pagamento;
-
-public interface Dinheiro {
-	static int noDinheiro() {
-		return 3;
-	}
-}

@@ -1,5 +1,0 @@
-package exemplo.enuns;
-
-public enum FormaPagamento {
-
-}

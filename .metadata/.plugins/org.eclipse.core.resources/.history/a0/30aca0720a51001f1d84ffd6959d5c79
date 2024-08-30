@@ -1,7 +1,0 @@
-package avaliacao.semana1;
-
-public class QuantException extends Exception{
-	public QuantException() {
-		super();
-	}
-}

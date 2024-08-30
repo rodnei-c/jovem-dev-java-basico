@@ -1,8 +1,0 @@
-package avaliacao.semana1.interfaces.descontos;
-
-public interface DescontoIdade {
-	 static double desconto(double valor) {
-		double desc = valor * 0.20;
-		return valor - desc;
-	}
-}
